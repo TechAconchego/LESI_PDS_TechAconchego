@@ -1,6 +1,6 @@
 # main
 
-# Student Habitat Rental Web App
+# Student TechAconchego Rental App
 
 ## Table of Contents
 
