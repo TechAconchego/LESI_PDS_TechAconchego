@@ -1,5 +1,3 @@
-# main
-
 # Student TechAconchego Rental App
 
 ## Table of Contents
@@ -41,17 +39,19 @@ To run this web application locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/student-habitat-rental.git`
 2. Navigate to the project directory: `cd student-habitat-rental`
-3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+3. Install Python and Django: [Python Installation](https://www.python.org/downloads/) | [Django Installation](https://docs.djangoproject.com/en/3.2/intro/install/)
+4. Install PostgreSQL: [PostgreSQL Installation](https://www.postgresql.org/download/)
+5. Create and activate a virtual environment: `python -m venv venv` and `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
+6. Install Python dependencies: `pip install -r requirements.txt`
+7. Set up the database: `python manage.py migrate`
+8. Start the development server: `python manage.py runserver`
+9. Open your browser and visit: `http://localhost:8000`
 
 ## Dependencies
 
-- Node.js
-- npm
-- React.js
-- Express.js
-- MongoDB
+- Python
+- Django
+- PostgreSQL
 
 Make sure to have these dependencies installed before running the application.
 
