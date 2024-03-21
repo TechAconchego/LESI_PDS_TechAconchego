@@ -49,12 +49,6 @@ class ContratoServ(models.Model):
         db_table = 'contrato_serv'
         unique_together = (('id_senhorio', 'id_prestador', 'id_tipo', 'id_alojamento'),)
 
-class Desconto(models.Model):
-    id_desconto = models.AutoField(primary_key=True)
-    valor = models.IntegerField()
 
-    class Meta:
-        managed = False
-        db_table = 'desconto'
 
 

@@ -35,3 +35,10 @@ class Nota(models.Model):
         db_table = 'nota'
         unique_together = (('id_estudante', 'curso', 'anolectivo', 'uc'),)
 
+class Desconto(models.Model):
+    id_desconto = models.AutoField(primary_key=True)
+    valor = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'desconto'
