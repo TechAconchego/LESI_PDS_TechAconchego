@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Alojamentos</title>
+</head>
+<body>
+    <h1>Alojamentos Disponíveis</h1>
+    <ul>
+        {% for alojamento in alojamentos %}
+            <li>{{ alojamento.endereco }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

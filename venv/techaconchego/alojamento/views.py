@@ -17,7 +17,7 @@ from django.http import HttpResponse
 # usando render
 
 def home(request):
-    return render(request, 'alojamento/home.html', {'title': 'TechAconchego Alojamento Home'})
+    return render(request, 'alojamento/alojamento.html', {'title': 'TechAconchego Alojamento Home'})
 
 def about(request):
     return render(request, 'alojamento/about.html', {'title': 'TechAconchego Alojamento About'})
