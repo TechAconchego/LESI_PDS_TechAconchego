@@ -84,7 +84,10 @@ WSGI_APPLICATION = 'techaconchego.wsgi.application'
 #    }
 #}
 # usando a ligação ao railway e postgresql
+
 import dj_database_url,os 
+
+# from dotenv import load_dotenv
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
