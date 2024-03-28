@@ -7,7 +7,8 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 
 from django.db import models
-from ..senhorio.models import Desconto
+from senhorio.models import Desconto
+
 
 # Create your models here.
 
