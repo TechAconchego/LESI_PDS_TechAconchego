@@ -3,9 +3,9 @@
 <head>
     <title>Listar Alojamentos</title>
 </head>
-<a href="{% url 'gerenciar_estudantes' %}">Gerenciar Estudantes</a>
-
 <body>
+    <a href="{% url 'gerenciar_estudantes' %}">Gerenciar Estudantes</a>
+    <a href="{% url 'gerenciar_senhorios' %}">Gerenciar Senhorios</a>
     <h1>Alojamentos Disponíveis</h1>
     <ul>
         {% for alojamento in alojamentos %}
