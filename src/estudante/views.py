@@ -38,3 +38,6 @@ def atualizar_estudante(request, id_estudante):
     else:
         form = EstudanteForm(instance=estudante)
     return render(request, 'atualizar_estudante.html', {'form': form})
+
+def gerenciar_estudantes(request):
+    return render(request, 'estudante.html')
