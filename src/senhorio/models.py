@@ -20,3 +20,12 @@ class Senhorio(models.Model):
     class Meta:
         managed = False
         db_table = 'senhorio'
+
+
+class Desconto(models.Model):
+    id_desconto = models.AutoField(primary_key=True)
+    valor = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'desconto'

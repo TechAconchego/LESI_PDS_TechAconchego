@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 
 from django.db import models
+from ..senhorio.models import Desconto
 
 # Create your models here.
 
@@ -20,6 +21,9 @@ class Estudante(models.Model):
     class Meta:
         managed = False
         db_table = 'estudante'
+        
+    def __str__(self):
+        return self.nome
 
 
 class Nota(models.Model):
@@ -35,10 +39,3 @@ class Nota(models.Model):
         db_table = 'nota'
         unique_together = (('id_estudante', 'curso', 'anolectivo', 'uc'),)
 
-class Desconto(models.Model):
-    id_desconto = models.AutoField(primary_key=True)
-    valor = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'desconto'

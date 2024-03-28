@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Estudante</title>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir o estudante {{ estudante.nome }}?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, Excluir</button>
+    </form>
+</body>
+</html>
