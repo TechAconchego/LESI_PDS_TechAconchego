@@ -17,7 +17,48 @@ from django.http import HttpResponse
 # usando render
 
 def home(request):
-    return render(request, 'alojamento/alojamento.html', {'title': 'TechAconchego Alojamento Home'})
+    return render(request, 'alojamento.html', {'title': 'TechAconchego Alojamento Home'})
 
 def about(request):
-    return render(request, 'alojamento/about.html', {'title': 'TechAconchego Alojamento About'})
+    return render(request, 'about.html', {'title': 'TechAconchego Alojamento About'})
+
+
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Alojamento
+from .forms import AlojamentoForm
+
+def criar_alojamento(request):
+    if request.method == 'POST':
+        form = AlojamentoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_alojamentos')
+    else:
+        form = AlojamentoForm()
+    return render(request, 'alojamento/criar_alojamento.html', {'form': form})
+
+def listar_alojamentos(request):
+    alojamentos = Alojamento.objects.all()
+    return render(request, 'alojamento/listar_alojamentos.html', {'alojamentos': alojamentos})
+
+def detalhes_alojamento(request, id_alojamento):
+    alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
+    return render(request, 'alojamento/detalhes_alojamento.html', {'alojamento': alojamento})
+
+def atualizar_alojamento(request, id_alojamento):
+    alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
+    if request.method == 'POST':
+        form = AlojamentoForm(request.POST, instance=alojamento)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_alojamentos')
+    else:
+        form = AlojamentoForm(instance=alojamento)
+    return render(request, 'alojamento/atualizar_alojamento.html', {'form': form})
+
+def apagar_alojamento(request, id_alojamento):
+    alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
+    if request.method == 'POST':
+        alojamento.delete()
+        return redirect('listar_alojamentos')
+    return render(request, 'alojamento/apagar_alojamento.html', {'alojamento': alojamento})
