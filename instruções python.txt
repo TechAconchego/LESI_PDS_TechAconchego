@@ -1,0 +1,21 @@
+ligar ao techaconchego
+
+clonar o git main
+
+instalar o python com PATH
+
+abrir o visual studio code para a pasta main
+
+instalar o virtualenv 
+e criar um venv proprio. O meu anda no git, ainda não percebi como ? Later resolve-se...
+
+pip install virtualenv
+criar o dir virtual
+virtualenv [directory]
+ir para dentro do dir venv criado e 
+pip install -r ..\requirements.txt
+
+# se der erro no dotenv
+#python -m pip install python-dotenv
+
+
