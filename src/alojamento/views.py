@@ -35,15 +35,15 @@ def criar_alojamento(request):
             return redirect('listar_alojamentos')
     else:
         form = AlojamentoForm()
-    return render(request, 'alojamento/criar_alojamento.html', {'form': form})
+    return render(request, 'criar_alojamento.html', {'form': form})
 
 def listar_alojamentos(request):
     alojamentos = Alojamento.objects.all()
-    return render(request, 'alojamento/listar_alojamentos.html', {'alojamentos': alojamentos})
+    return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
 
 def detalhes_alojamento(request, id_alojamento):
     alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
-    return render(request, 'alojamento/detalhes_alojamento.html', {'alojamento': alojamento})
+    return render(request, 'detalhes_alojamento.html', {'alojamento': alojamento})
 
 def atualizar_alojamento(request, id_alojamento):
     alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
@@ -54,11 +54,11 @@ def atualizar_alojamento(request, id_alojamento):
             return redirect('listar_alojamentos')
     else:
         form = AlojamentoForm(instance=alojamento)
-    return render(request, 'alojamento/atualizar_alojamento.html', {'form': form})
+    return render(request, 'atualizar_alojamento.html', {'form': form})
 
 def apagar_alojamento(request, id_alojamento):
     alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
     if request.method == 'POST':
         alojamento.delete()
         return redirect('listar_alojamentos')
-    return render(request, 'alojamento/apagar_alojamento.html', {'alojamento': alojamento})
+    return render(request, 'apagar_alojamento.html', {'alojamento': alojamento})

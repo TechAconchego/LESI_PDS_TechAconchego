@@ -18,7 +18,7 @@ class Prestador(models.Model):
     nome = models.CharField(max_length=255)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'prestador'
         unique_together = (('id_prestador', 'id_tipo'),)
 
@@ -32,6 +32,6 @@ class ContratoServ(models.Model):
     mensalidade = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'contrato_serv'
         unique_together = (('id_senhorio', 'id_prestador', 'id_tipo', 'id_alojamento'),)

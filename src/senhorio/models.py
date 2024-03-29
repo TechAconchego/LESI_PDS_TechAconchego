@@ -19,7 +19,7 @@ class Senhorio(models.Model):
     password = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'senhorio'
 
 
@@ -28,5 +28,5 @@ class Desconto(models.Model):
     valor = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'desconto'

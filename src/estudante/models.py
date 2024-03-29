@@ -20,7 +20,7 @@ class Estudante(models.Model):
     id_desconto = models.ForeignKey(Desconto, models.DO_NOTHING, db_column='id_desconto', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'estudante'
         
     def __str__(self):
@@ -36,7 +36,7 @@ class Nota(models.Model):
     id_desconto = models.ForeignKey(Desconto, models.DO_NOTHING, db_column='id_desconto')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'nota'
         unique_together = (('id_estudante', 'curso', 'anolectivo', 'uc'),)
 

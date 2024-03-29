@@ -22,7 +22,7 @@ class Alojamento(models.Model):
     nquartoslivres = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'alojamento'
 
 class Aluguer(models.Model):
@@ -34,7 +34,7 @@ class Aluguer(models.Model):
     renda_final = models.IntegerField(db_column='renda_final')  # Corrigido o nome do campo
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'aluguer'
         unique_together = (('id_estudante', 'id_senhorio', 'id_alojamento', 'data_inicio'),)
 
