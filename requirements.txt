@@ -5,8 +5,11 @@ psycopg2-binary==2.9.9
 sqlparse==0.4.4
 typing_extensions==4.10.0
 
+<<<<<<< HEAD
 
-asgiref==3.7.2
+
+=======
+>>>>>>> 8864a1dc24b13a9ddf2822968f7b8a1fcfa70501
 asttokens==2.4.1
 attrs==23.2.0
 backcall==0.2.0
@@ -19,6 +22,7 @@ decorator==5.1.1
 defusedxml==0.7.1
 dj-database-url==2.1.0
 Django==5.0.3
+djangorestframework==3.15.1
 docopt==0.6.2
 executing==2.0.1
 fastjsonschema==2.19.1
@@ -49,6 +53,7 @@ psycopg2-binary==2.9.9
 pure-eval==0.2.2
 Pygments==2.17.2
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 pywin32==306
 pyzmq==25.1.2
 referencing==0.34.0
