@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    ##'django.contrib.sessions', sessions are not used anymore
+    'django.contrib.sessions', # sessions are not used anymore
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
