@@ -43,14 +43,14 @@ To run this web application locally, follow these steps:
 4. Install PostgreSQL: [PostgreSQL Installation](https://www.postgresql.org/download/)
 5. Create and activate a virtual environment: `python -m venv venv` and `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
 6. Install Python dependencies: `pip install -r requirements.txt`
-7. Set up the database: `python manage.py migrate`
-8. Start the development server: `python manage.py runserver`
-9. Open your browser and visit: `http://localhost:8000`
+7. Start the development server: `python manage.py runserver`
+8. Open your browser and visit: `http://localhost:8000`
 
 ## Dependencies
 
 - Python
 - Django
+- Railway
 - PostgreSQL
 
 Make sure to have these dependencies installed before running the application.
