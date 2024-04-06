@@ -9,8 +9,11 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('estudante', '0001_initial'),
-        ('senhorio', '0001_initial'),
+
+            # CORRER O SEGUINTE DEPOIS DE O ROBERTO CONFIRMAR QUE NÃO VAI ESTOURAR :D
+            # python manage.py makemigrations techaconchego
+            # python manage.py migrate
+
     ]
 
     operations = [
