@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions', # sessions are not used anymore
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authors',
 ]
 
 MIDDLEWARE = [
