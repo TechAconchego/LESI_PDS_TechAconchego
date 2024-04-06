@@ -20,9 +20,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('alojamento.urls')),
-    path('estudante/', include('estudante.urls')),
-    path('senhorio/', include('senhorio.urls')),
+#    path('', include('alojamento.urls')),
+#    path('estudante/', include('estudante.urls')),
+#    path('senhorio/', include('senhorio.urls')),
     path('', views.home, name='alojamento-home'),
     path('about/', views.about, name='alojamento-about'),
     path('criar/', views.criar_alojamento, name='criar_alojamento'),
@@ -36,9 +36,9 @@ urlpatterns = [
     path('atualizar/<int:id>/', views.atualizar_senhorio, name='atualizar_senhorio'),
     path('apagar/<int:id>/', views.apagar_senhorio, name='apagar_senhorio'),
     path('gerenciar/', views.gerenciar_senhorios, name='gerenciar_senhorios'),
-    path('criar_estudante', views.criar_estudante, name='criar_estudante'),
+    path('criar_estudante/', views.criar_estudante, name='criar_estudante'),
     path('listar_estudantes/', views.listar_estudantes, name='listar_estudantes'),
-    path('atualizar_estudantes//<int:id_estudante>/', views.atualizar_estudante, name='atualizar_estudante'),
+    path('atualizar_estudantes/<int:id_estudante>/', views.atualizar_estudante, name='atualizar_estudante'),
     path('excluir_estudante/<int:id_estudante>/', views.excluir_estudante, name='excluir_estudante'),
     path('gerenciar/', views.gerenciar_estudantes, name='gerenciar_estudantes'),
 ]

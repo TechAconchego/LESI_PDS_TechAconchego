@@ -1,6 +1,6 @@
-Django==5.0.3           ' framework base Django '
+Django==5.0.3
 
-psycopg2-binary==2.9.9  ' para PostgreSQL '
-sqlparse==0.4.4         ' para o django conseuguir fazer queries sql '
-dj-database-url==2.1.0  ' para utilizar BD a partir de URL '
-python-dotenv==1.0.1    ' para utilizar o ficheiro .env'b
+psycopg2-binary==2.9.9
+sqlparse==0.4.4
+dj-database-url==2.1.0
+python-dotenv==1.0.1
