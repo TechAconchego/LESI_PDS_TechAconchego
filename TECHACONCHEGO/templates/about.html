@@ -1,4 +1,36 @@
 {% extends "alojamento/base.html" %}
+
 {% block content %}
-    <h1>About Page</h1>
+    <div class="container">
+        <h1>About Page</h1>
+        <p>This is the about page content.</p>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007d31;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #343a40;
+        }
+    </style>
 {% endblock content %}

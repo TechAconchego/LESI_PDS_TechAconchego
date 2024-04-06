@@ -1,30 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Alojamentos</title>
-</head>
-<body>
-    <h1>Listar Alojamentos</h1>
-    <ul>
-        {% for alojamento in alojamentos %}
-            <li>{{ alojamento.id_alojamento }} - Renda Base: {{ alojamento.renda_base }} - Senhorio: {{ alojamento.id_senhorio }}</li>
-        {% endfor %}
+@{
+    ViewData["Title"] = "Gerir Alojamento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Gerir Alojamento</h2>
+
+    <!-- Tabs para navegação entre seções -->
+    <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="detalhes-tab" data-toggle="tab" href="#detalhes">Detalhes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="fotos-tab" data-toggle="tab" href="#fotos">Fotos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="comodidades-tab" data-toggle="tab" href="#comodidades">Comodidades</a>
+        </li>
     </ul>
 
-    <!-- Adicionando links para os outros templates CRUD -->
-    <h2>Opções de Gerenciamento de Alojamentos:</h2>
-    <ul>
-        <li><a href="{% url 'criar_alojamento' %}">Criar Alojamento</a></li>
-        <li><a href="{% url 'detalhes_alojamento' 1%}">Detalhes do Alojamento</a></li>
-        <li><a href="{% url 'atualizar_alojamento' 1%}">Atualizar Alojamento</a></li>
-        <li><a href="{% url 'apagar_alojamento' 1%}">Apagar Alojamento</a></li>
-    </ul>
-    <h2>opções de outros items</h2>
-    <ul>
-        <li><a href="{% url 'gerenciar_estudantes' %}">Gerenciar Estudantes</a></li>
-        <li><a href="{% url 'gerenciar_senhorios' %}">Gerenciar Senhorios</a></li>
-    </ul>
-</body>
-</html>
+    <!-- Conteúdo das seções -->
+    <div class="tab-content mt-3">
+        <!-- Seção Detalhes -->
+        <div class="tab-pane fade show active" id="detalhes">
+            <!-- Formulário para editar detalhes do alojamento -->
+            <form>
+                <!-- Campos para detalhes do alojamento (exemplo) -->
+                <div class="form-group">
+                    <label for="nomeAlojamento">Nome do Alojamento:</label>
+                    <input type="text" class="form-control" id="nomeAlojamento" placeholder="Nome do Alojamento">
+                </div>
+                <!-- Adicione mais campos conforme necessário -->
+                <!-- Botão para salvar alterações -->
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </form>
+        </div>
+
+        <!-- Seção Fotos -->
+        <div class="tab-pane fade" id="fotos">
+            <!-- Área para gerir fotos do alojamento (exemplo) -->
+            <div class="alert alert-info" role="alert">
+                Adicione, remova ou altere fotos do alojamento aqui.
+            </div>
+            <!-- Adicione elementos para gerir fotos -->
+        </div>
+
+        <!-- Seção Comodidades -->
+        <div class="tab-pane fade" id="comodidades">
+            <!-- Área para gerir comodidades do alojamento (exemplo) -->
+            <div class="alert alert-info" role="alert">
+                Adicione ou remova comodidades disponíveis no alojamento.
+            </div>
+            <!-- Adicione elementos para gerir comodidades -->
+        </div>
+    </div>
+</div>
