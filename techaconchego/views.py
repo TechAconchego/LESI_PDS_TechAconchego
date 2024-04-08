@@ -11,7 +11,7 @@ from .forms import AlojamentoForm
 ## ALOJAMENTO ####################################################################
 
 def home(request):
-    return render(request, 'index.html', {'title': 'TechAconchego Alojamento Home'})
+    return render(request, 'home.html', {'title': 'TechAconchego Alojamento Home'})
 
 def about(request):
     return render(request, 'about.html', {'title': 'TechAconchego Alojamento About'})
