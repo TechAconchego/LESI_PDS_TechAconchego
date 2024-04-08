@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Alojamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007d31;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Alojamento</h1>
+        <p>ID: {{ alojamento.id_alojamento }}</p>
+        <p>Renda Base: {{ alojamento.renda_base }}</p>
+        <p>Senhorio: {{ alojamento.id_senhorio }}</p>
+        <!-- Adicionar mais detalhes conforme necessário -->
+    </div>
+</body>
+</html>
