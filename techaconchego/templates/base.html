@@ -174,12 +174,18 @@
                 </div>
             </section>
         </main>
+
+        {% block content %}
+        {% endblock %}
+
     </div>
     <footer>
         <div class="container">
-            &copy; 2024 - TechAconchego - <a href="/Home/Privacy" style="color: white;">Privacy</a>
+            &copy; 2024 - TechAconchego - <a href="/Home/Privacy" style="color: white;">Privacy</a> - <a href="{% url 'about' %}">About</a>
+
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

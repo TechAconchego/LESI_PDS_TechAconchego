@@ -23,8 +23,8 @@ urlpatterns = [
 #    path('', include('alojamento.urls')),
 #    path('estudante/', include('estudante.urls')),
 #    path('senhorio/', include('senhorio.urls')),
-    path('', views.home, name='alojamento-home'),
-    path('about/', views.about, name='alojamento-about'),
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
     path('criar/', views.criar_alojamento, name='criar_alojamento'),
     path('listar/', views.listar_alojamentos, name='listar_alojamentos'),
     path('<int:id_alojamento>/', views.detalhes_alojamento, name='detalhes_alojamento'),
@@ -42,4 +42,3 @@ urlpatterns = [
     path('excluir_estudante/<int:id_estudante>/', views.excluir_estudante, name='excluir_estudante'),
     path('gerenciar/', views.gerenciar_estudantes, name='gerenciar_estudantes'),
 ]
-
