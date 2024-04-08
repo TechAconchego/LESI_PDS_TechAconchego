@@ -141,11 +141,12 @@
 
         {% block content %}
         {% endblock %}
-        
+
     </div>
     <footer>
         <div class="container">
-            &copy; 2024 - TechAconchego - <a href="/Home/Privacy" style="color: white;">Privacy</a> - <a href="about.html" style="color: white;">About</a>
+            &copy; 2024 - TechAconchego - <a href="/Home/Privacy" style="color: white;">Privacy</a> - <a href="{% url 'about' %}">About</a>
+
         </div>
     </footer>
 
