@@ -4,3 +4,4 @@ Django Examples (DELETE)/
 src-SERVERW10/
 src-SERVERW10/
 **/__pycache__/
+.env
