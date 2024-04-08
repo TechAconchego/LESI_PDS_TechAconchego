@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Estudante, Nota
 from .models import Senhorio
+from .models import Alojamento
+
 from .forms import EstudanteForm
 from .forms import SenhorioForm
-from .models import Alojamento
 from .forms import AlojamentoForm
 
 
