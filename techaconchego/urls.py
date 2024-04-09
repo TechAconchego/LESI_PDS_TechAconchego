@@ -16,6 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+from django.contrib.auth import views as autentic_views  # permite importar views de sistema
+                                                        # para controlo de autenticação
+                                                        
 from . import views
 
 urlpatterns = [
@@ -41,4 +45,5 @@ urlpatterns = [
     path('atualizar_estudantes/<int:id_estudante>/', views.atualizar_estudante, name='atualizar_estudante'),
     path('excluir_estudante/<int:id_estudante>/', views.excluir_estudante, name='excluir_estudante'),
     path('gerenciar/', views.gerenciar_estudantes, name='gerenciar_estudantes'),
+    path('login/',autentic_views.LoginView.as_view(template_name='loginestudante.html'),name='login'),
 ]
