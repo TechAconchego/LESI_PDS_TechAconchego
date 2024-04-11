@@ -26,9 +26,12 @@ def about(request):
 def criar_alojamento(request):
     if request.method == 'POST':
         form = AlojamentoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('listar_alojamentos')
+        try:
+            if form.is_valid():
+                form.save()
+                return redirect('listar_alojamentos')
+        except Exception as e:
+            return render(request, ' criar_alojamento.html', {'form': form, 'error': str(e)})
     else:
         form = AlojamentoForm()
     return render(request, 'criar_alojamento.html', {'form': form})
