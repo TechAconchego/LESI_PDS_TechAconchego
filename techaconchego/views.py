@@ -57,7 +57,8 @@ def apagar_alojamento(request, id_alojamento):
     if request.method == 'POST':
         alojamento.delete()
         return redirect('listar_alojamentos')
-    return render(request, 'apagar_alojamento.html', {'alojamento': alojamento})
+    else:
+        return render(request, 'apagar_alojamento.html', {'alojamento': alojamento})
 
 
 
@@ -79,7 +80,7 @@ def criar_estudante(request):
     return render(request, 'criar_estudante.html', {'form': form})
 
 def detalhes_estudante(request, id_estudante):
-    estudante = get_object_or_404(Estudante, id_estudante=id_estudante)
+    estudante = get_object_or_404(Estudante, ipk=id_estudante)
     return render(request, 'detalhes_estudante.html', {'estudante': estudante})
 
 def excluir_estudante(request, id_estudante):
