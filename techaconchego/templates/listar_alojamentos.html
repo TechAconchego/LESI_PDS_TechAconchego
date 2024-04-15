@@ -1,48 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Alojamentos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #007d31;
-            margin-bottom: 30px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            color: #343a40;
-        }
-
-        li:last-child {
-            border-bottom: none;
-        }
-    </style>
-</head>
+{% extends "base.html" %}
+{% block content %}
 <body>
     <div class="container">
         <h1>Listar Alojamentos</h1>
@@ -53,4 +11,5 @@
         </ul>
     </div>
 </body>
-</html>
+
+{% endblock content %}

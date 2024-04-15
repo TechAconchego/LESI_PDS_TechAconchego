@@ -14,14 +14,13 @@ from .forms import AlojamentoForm
 def login(request):
     return render(request, 'loginestudante.html',{'title': 'TechAconchego Alojamento Login'})
 
+def about(request):
+    return render(request, 'about.html', {'title': 'TechAconchego Alojamento About'})
 
 ## ALOJAMENTO ####################################################################
 
 def home(request):
     return render(request, 'home.html', {'title': 'TechAconchego Alojamento Home'})
-
-def about(request):
-    return render(request, 'about.html', {'title': 'TechAconchego Alojamento About'})
 
 def criar_alojamento(request):
     if request.method == 'POST':

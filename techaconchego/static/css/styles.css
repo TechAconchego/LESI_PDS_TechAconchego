@@ -1,16 +1,69 @@
-<!DOCTYPE html>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+/* Body do login */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - TechAconchego</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-   {% comment %}
-     <style>
+/* Form */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000c02;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f3004;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00b327;
+}
+
+
          body {
              font-family: Arial, sans-serif;
              background-color: #f8f9fa;
@@ -121,48 +174,4 @@
              margin-right: auto;
              margin-left: auto;
          }
-     </style>
-   {% endcomment %}
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-md">
-            <div class="container">
-                <a class="navbar-brand" href="/">TechAconchego</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'listar_alojamentos' %}">Alojamentos</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about' %}">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <!-- Outros itens do menu -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-        {% block content %}
-        {% endblock %}
-
-    <footer>
-        <div class="container">
-            &copy; 2024 - TechAconchego - <a href="/Home/Privacy" style="color: white;">Privacy</a> - <a href="{% url 'about' %}">About</a>
-
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+     
