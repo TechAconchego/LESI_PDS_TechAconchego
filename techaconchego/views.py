@@ -12,9 +12,19 @@ from .forms import EstudanteForm
 from .forms import SenhorioForm
 from .forms import AlojamentoForm
 
+from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import UserProfile
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.userprofile.save()
 
 ##  registo de utilizadores, estudante, senhorio, prestserviços
 
@@ -81,9 +91,21 @@ def criar_alojamento(request):
         form = AlojamentoForm()
     return render(request, 'criar_alojamento.html', {'form': form})
 
+## versão simples
 def listar_alojamentos(request):
     alojamentos = Alojamento.objects.all()
     return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
+
+## versão com teste de user
+def listar_alojamentos(request):
+    if request.user.is_authenticated and request.user.userprofile.is_student:
+        alojamentos = Alojamento.objects.all()
+        return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
+    else:
+        # Redirecionar para a página de login se o usuário não estiver autenticado ou não for um estudante
+        return redirect('login')
+
+
 
 def detalhes_alojamento(request, id_alojamento):
     alojamento = get_object_or_404(Alojamento, pk=id_alojamento)
