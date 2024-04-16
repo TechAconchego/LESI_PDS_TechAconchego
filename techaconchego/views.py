@@ -92,9 +92,9 @@ def criar_alojamento(request):
     return render(request, 'criar_alojamento.html', {'form': form})
 
 ## versão simples
-def listar_alojamentos(request):
-    alojamentos = Alojamento.objects.all()
-    return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
+#def listar_alojamentos(request):
+#    alojamentos = Alojamento.objects.all()
+#    return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
 
 ## versão com teste de user
 def listar_alojamentos(request):
@@ -104,7 +104,6 @@ def listar_alojamentos(request):
     else:
         # Redirecionar para a página de login se o usuário não estiver autenticado ou não for um estudante
         return redirect('login')
-
 
 
 def detalhes_alojamento(request, id_alojamento):
