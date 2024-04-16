@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 
 
 from .models import Estudante, Nota
@@ -9,13 +12,56 @@ from .forms import EstudanteForm
 from .forms import SenhorioForm
 from .forms import AlojamentoForm
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from .models import UserProfile
+
+##  registo de utilizadores, estudante, senhorio, prestserviços
+
+from .forms import UserRegistrationForm,UserLoginForm
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                if user.userprofile.is_student:
+                    # Redirecione para a página do estudante
+                    return redirect('student_dashboard')
+                elif user.userprofile.is_landlord:
+                    # Redirecione para a página do senhorio
+                    return redirect('landlord_dashboard')
+    else:
+        form = UserLoginForm()
+    return render(request, 'registration/login.html', {'form': form})
+
+
+
+
+
 ## Principais ####################################################################
 
-def login(request):
-    return render(request, 'loginestudante.html',{'title': 'TechAconchego Alojamento Login'})
+## Função subsituida pela generica 
+# def login(request):
+    ##return render(request, 'loginestudante.html',{'title': 'TechAconchego Alojamento Login'})
 
 def about(request):
     return render(request, 'about.html', {'title': 'TechAconchego Alojamento About'})
+
 
 ## ALOJAMENTO ####################################################################
 

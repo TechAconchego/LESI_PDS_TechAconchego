@@ -46,6 +46,12 @@ urlpatterns = [
     path('atualizar_estudantes/<int:id_estudante>/', views.atualizar_estudante, name='atualizar_estudante'),
     path('excluir_estudante/<int:id_estudante>/', views.excluir_estudante, name='excluir_estudante'),
     path('gerenciar/', views.gerenciar_estudantes, name='gerenciar_estudantes'),
-    path('login/',autentic_views.LoginView.as_view(template_name='loginestudante.html'),name='login'),
+    
+    ## path('login/',autentic_views.LoginView.as_view(template_name='loginestudante.html'),name='login'),
+    
+    ## nova abordagem ao registo e login
+        path('register/', views.register, name='register'),
+        ## path('login/', views.user_login, name='login'), não usar, a de baixo, permite enviar argumentos
+        path('login/', autentic_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
         
 ]

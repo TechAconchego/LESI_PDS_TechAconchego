@@ -18,3 +18,23 @@ class SenhorioForm(forms.ModelForm):
     class Meta:
         model = Senhorio
         fields = ['nome', 'password']
+
+
+
+## funções de registo de utilizazores 
+
+from django import forms
+from django.contrib.auth.models import User
+
+class UserRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+
+class UserLoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    
+
