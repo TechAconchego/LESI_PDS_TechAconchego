@@ -16,6 +16,12 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import UserProfile
+from .forms import UserRegistrationForm,UserLoginForm
+
+# rotinas do django para encryptar e desincryptar passwords
+
+from django.contrib.auth.hashers import make_password,check_password
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -28,12 +34,21 @@ def save_user_profile(sender, instance, **kwargs):
 
 ##  registo de utilizadores, estudante, senhorio, prestserviços
 
-from .forms import UserRegistrationForm,UserLoginForm
 
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
+            # Obtenha os dados do formulário
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            # Encripte a senha antes de salvar
+            hashed_password = make_password(password)
+            print(hashed_password)
+            # Crie uma instância de usuário com a senha encriptada
+            user = form.save(commit=False)
+            user.password = hashed_password
+            user.save()
             form.save()
             return redirect('login')
     else:
