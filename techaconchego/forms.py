@@ -27,11 +27,20 @@ from django import forms
 from django.contrib.auth.models import User
 
 class UserRegistrationForm(forms.ModelForm):
+    CHOICES = [('student', 'Estudante'), ('landlord', 'Senhorio'),('tech','Manutenção')]
+    account_type = forms.ChoiceField(choices=CHOICES)
     password = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
+        fields = ['username', 'email', 'password', 'account_type']
+        widgets = {'password': forms.PasswordInput()}
+
+
+ 
+
+
+
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()

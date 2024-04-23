@@ -3,7 +3,7 @@
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
-#   * Remove `managed = True` lines if you wish to allow Django to create, modify, and delete the table
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 
 from django.db import models
@@ -12,8 +12,17 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    is_student = models.BooleanField(default=False)
-    is_landlord = models.BooleanField(default=False)
+    #is_student = models.BooleanField(default=False)
+    #is_landlord = models.BooleanField(default=False)
+    # Outros campos do perfil
+    # Pode ser 'student' ou 'landlord' ou ....
+    account_type_choices = [
+        ('student', 'Estudante'),
+        ('landlord', 'Senhorio'),
+        ('tech','Manutenção'),
+        # Adicione outros tipos de conta, se necessário
+    ]
+    account_type = models.CharField(max_length=20, choices=account_type_choices, default='student')
 
 
 class Alojamento(models.Model):
@@ -22,10 +31,11 @@ class Alojamento(models.Model):
     nquartos = models.IntegerField()
     aluguerparcial = models.CharField(max_length=255)
     nquartoslivres = models.IntegerField()
-    id_senhorio = models.ForeignKey('Senhorio', models.DO_NOTHING, db_column='id_senhorio')
-
+    #id_senhorio = models.ForeignKey('Senhorio', models.DO_NOTHING, db_column='id_senhorio')
+    # alteração da chave estrangeira pois podemos ter alojamentos sem senhorio. Algo a melhorar
+    id_senhorio = models.ForeignKey('Senhorio', models.DO_NOTHING, db_column='id_senhorio', null=True)
     class Meta:
-        managed = True
+        managed = False
         db_table = 'alojamento'
 
 
@@ -35,10 +45,10 @@ class Aluguer(models.Model):
     data_inicio = models.DateTimeField()
     data_fim = models.DateTimeField(blank=True, null=True)
     renda_final = models.IntegerField()
-    id_alojamento = models.ForeignKey(Alojamento, models.DO_NOTHING, db_column='id_alojamento')
+    id_alojamento = models.ForeignKey(Alojamento, models.DO_NOTHING, db_column='id_alojamento', null=True)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'aluguer'
         unique_together = (('id_estudante', 'id_senhorio', 'id_alojamento', 'data_inicio'),)
 
@@ -51,11 +61,11 @@ class ContratoServ(models.Model):
     inicio = models.DateTimeField()
     fim = models.DateTimeField(blank=True, null=True)
     mensalidade = models.IntegerField()
-    id_alojamento = models.ForeignKey(Alojamento, models.DO_NOTHING, db_column='id_alojamento')
-    id_prestador = models.ForeignKey('Prestador', models.DO_NOTHING, db_column='id_prestador')
+    id_alojamento = models.ForeignKey(Alojamento, models.DO_NOTHING, db_column='id_alojamento', null=True)
+    id_prestador = models.ForeignKey('Prestador', models.DO_NOTHING, db_column='id_prestador', null=True)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'contrato_serv'
         unique_together = (('id_senhorio', 'id_prestador', 'id_tipo', 'id_alojamento'),)
 
@@ -65,7 +75,7 @@ class Desconto(models.Model):
     valor = models.IntegerField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'desconto'
 
 class Estudante(models.Model):
@@ -75,7 +85,7 @@ class Estudante(models.Model):
     id_desconto = models.ForeignKey(Desconto, models.DO_NOTHING, db_column='id_desconto', blank=True, null=True)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'estudante'
 
 
@@ -85,10 +95,10 @@ class Nota(models.Model):
     anolectivo = models.CharField(max_length=255)
     uc = models.CharField(max_length=255)
     classificacao = models.IntegerField(blank=True, null=True)
-    id_desconto = models.ForeignKey(Desconto, models.DO_NOTHING, db_column='id_desconto')
+    id_desconto = models.ForeignKey(Desconto, models.DO_NOTHING, db_column='id_desconto', null=True)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'nota'
         unique_together = (('id_estudante', 'curso', 'anolectivo', 'uc'),)
 
@@ -99,7 +109,7 @@ class Prestador(models.Model):
     nome = models.CharField(max_length=255)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'prestador'
         unique_together = (('id_prestador', 'id_tipo'),)
 
@@ -110,7 +120,7 @@ class Senhorio(models.Model):
     password = models.IntegerField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'senhorio'
 
 

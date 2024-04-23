@@ -42,12 +42,18 @@ def register(request):
             # Obtenha os dados do formulário
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
+            account_type = form.cleaned_data['account_type']
             # Encripte a senha antes de salvar
             hashed_password = make_password(password)
             print(hashed_password)
             # Crie uma instância de usuário com a senha encriptada
             user = form.save(commit=False)
+            
+            profile = UserProfile.objects.get_or_create(user=user)[0]
+            profile.account_type = account_type
+            
             user.password = hashed_password
+            
             user.save()
             form.save()
             return redirect('login')
