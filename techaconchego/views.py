@@ -45,17 +45,19 @@ def register(request):
             account_type = form.cleaned_data['account_type']
             # Encripte a senha antes de salvar
             hashed_password = make_password(password)
-            print(hashed_password)
-            # Crie uma instância de usuário com a senha encriptada
-            user = form.save(commit=False)
-            
-            profile = UserProfile.objects.get_or_create(user=user)[0]
+           # Tente obter o usuário existente ou criar um novo
+            user, created = User.objects.get_or_create(username=username)
+            if created:
+                user.set_password(password)
+            else:
+                # Se o usuário já existir, atualize a senha
+                user.set_password(password)
+                user.save()
+            user.save()  # Salve o usuário primeiro
+            # Agora que o usuário está salvo, crie e salve o perfil do usuário
+            profile, profile_created = UserProfile.objects.get_or_create(user=user)
             profile.account_type = account_type
-            
-            user.password = hashed_password
-            
-            user.save()
-            form.save()
+            profile.save()
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -70,10 +72,10 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
-                if user.userprofile.is_student:
+                if user.account_type == 'student':
                     # Redirecione para a página do estudante
                     return redirect('student_dashboard')
-                elif user.userprofile.is_landlord:
+                elif user.account_type == 'landlord':
                     # Redirecione para a página do senhorio
                     return redirect('landlord_dashboard')
     else:
@@ -119,7 +121,7 @@ def criar_alojamento(request):
 
 ## versão com teste de user
 def listar_alojamentos(request):
-    if request.user.is_authenticated and request.user.userprofile.is_student:
+    if request.user.is_authenticated and request.user.userprofile.account_type == 'Estudante':
         alojamentos = Alojamento.objects.all()
         return render(request, 'listar_alojamentos.html', {'alojamentos': alojamentos})
     else:
