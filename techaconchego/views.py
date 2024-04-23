@@ -41,24 +41,27 @@ def register(request):
         if form.is_valid():
             # Obtenha os dados do formulário
             username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             account_type = form.cleaned_data['account_type']
             # Encripte a senha antes de salvar
             hashed_password = make_password(password)
-           # Tente obter o usuário existente ou criar um novo
-            user, created = User.objects.get_or_create(username=username)
-            if created:
-                user.set_password(password)
-            else:
-                # Se o usuário já existir, atualize a senha
-                user.set_password(password)
-                user.save()
-            user.save()  # Salve o usuário primeiro
-            # Agora que o usuário está salvo, crie e salve o perfil do usuário
-            profile, profile_created = UserProfile.objects.get_or_create(user=user)
-            profile.account_type = account_type
-            profile.save()
+            
+            # Verifique se o nome de usuário já está em uso
+            if User.objects.filter(username=username).exists():
+                # Se o nome de usuário já estiver em uso, retorne uma mensagem de erro
+                messages.error(request, 'O nome de usuário já está em uso. Por favor, escolha outro.')
+                return redirect('register')
+
+            # Crie o novo usuário
+            user = User.objects.create_user(username=username, email=email, password=password)
+
+            # Crie e salve o perfil do usuário
+            profile = UserProfile.objects.create(user=user, account_type=account_type)
+
+            # Redirecione para a página de login após o registro bem-sucedido
             return redirect('login')
+           
     else:
         form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
