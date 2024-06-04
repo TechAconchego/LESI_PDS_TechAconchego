@@ -1,0 +1,375 @@
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 50px; /* Ajuste conforme necessário */
+    overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
+}
+
+header {
+    background-color: rgb(25, 82, 65);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgb(25, 82, 65);
+    color: #fff;
+    padding: 20px;
+    text-align: center; /* Center align the text */
+}
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block; /* Ensure the list behaves like a block element */
+    }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+
+
+
+section {
+    margin: 20px;
+}
+
+#featured-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.listing {
+    width: 300px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .listing:hover {
+        transform: scale(1.05);
+    }
+
+    .listing img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    transition: background 0.3s ease;
+    opacity: 0;
+}
+
+.listing:hover .overlay {
+    opacity: 1;
+}
+
+.description {
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .close:hover {
+        color: #ffc107; /* Cor de destaque ao passar o mouse */
+    }
+
+/* Ajuste a margem inferior do conteúdo principal */
+main {
+    margin-bottom: 20px; /* Ajuste conforme necessário */
+    flex-grow: 1;
+}
+
+
+.footer {
+    background-color: #f8f9fa; /* Cor de fundo do footer */
+    color: #6c757d; /* Cor do texto do footer */
+    padding: 0; /* Removido o padding para definir altura diretamente */
+    text-align: center; /* Alinhamento do texto no centro */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: relative; /* Certifique-se de que o posicionamento seja relativo */
+    height: 1px; /* Ajuste conforme necessário */
+}
+
+
+.border-top footer text-muted {
+    padding: 1px 0; /* Espaçamento interno do footer (superior e inferior) reduzido */
+    text-align: center; /* Alinhamento do texto no centro */
+    margin-top: 100px;
+}
+
+.footer a {
+    color: #6c757d; /* Cor dos links no footer */
+}
+
+    .footer a:hover {
+        color: #007bff; /* Cor dos links no hover no footer */
+    }
+
+/* Adicionando um efeito de transição suave ao corpo do site */
+body {
+    transition: background-color 0.5s ease;
+}
+
+    /* Mudando o esquema de cores para modo escuro ao clicar no botão de alternar */
+    body.dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
+
+/* Mudando o esquema de cores do botão de alternar para modo escuro */
+.dark-mode-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dark-mode-toggle:hover {
+        background-color: #444;
+    }
+
+/* Botão de Toggle do Sidebar */
+.toggle-btn {
+    font-size: 1.5em;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 2;
+    color: #fff;
+    transition: left 0.5s ease;
+}
+
+/* Responsividade do Sidebar */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        left: -250px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .toggle-btn {
+        left: 10px;
+    }
+}
+
+/* Estilos adicionados para o Sidebar Interativo */
+.sidebar.active {
+    left: 0;
+}
+
+.content.active {
+    margin-left: 250px;
+}
+
+.toggle-btn.active {
+    left: 250px;
+}
+
+/* Adicionando um efeito de transição suave ao sidebar */
+.sidebar, .content, .toggle-btn {
+    transition: left 0.5s ease;
+}
+
+.logo {
+    margin-right: 20px; /* Espaçamento à direita do logo */
+}
+
+    .logo img {
+        max-width: 120px; /* Largura máxima do logo */
+        height: auto;
+    }
+
+header {
+    display: flex;
+    align-items: center; /* Alinha itens verticalmente no centro */
+}
+
+h1 {
+    margin: 0; /* Remove a margem padrão do título */
+}
+
+.toggle-btn {
+    order: 1; /* Muda a ordem do botão para o último */
+}
+
+/* Adicione estilos conforme necessário */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.account-details {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-info,
+.account-options {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+h2 {
+    padding: 20px;
+}
+
+
+.imagem-pequena {
+    width: 50%; /* Defina a largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.imagem-e-detalhes {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.detalhes {
+    margin-left: 20px; /* Adapte conforme necessário para espaçamento entre a imagem e os detalhes */
+}
+
+/* Restante do seu estilo permanece inalterado */
+
+.detalhes-alojamento {
+    margin-bottom: 50px; /* Adapte conforme necessário para garantir espaço suficiente para o footer */
+}
+
+#detalhes-alojamento {
+    margin-bottom: 50px; /* Adapte conforme necessário para garantir espaço suficiente para o footer */
+}
+
+/* Outros estilos permanecem inalterados */
+
+.content {
+    margin-bottom: 60px; /* Adicione uma margem inferior ao conteúdo igual à altura do footer */
+}

@@ -1,0 +1,40 @@
+﻿@model TechAconchego.Models.RelatorioProblema
+
+@{
+    ViewData["Title"] = "Relatar Problema";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Relatar Problema</h2>
+
+    <!-- Formulário para relatar problema -->
+    <form asp-action="Report" method="post">
+        <!-- Exibir mensagens de erro de validação -->
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Campos para relatar problema -->
+        <div class="form-group">
+            <label for="Tipo">Tipo de Problema:</label>
+            <select class="form-control" id="Tipo" name="Tipo" required>
+                <option value="Alojamento">Alojamento</option>
+                <option value="Pagamento">Pagamento</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Descricao">Descrição do Problema:</label>
+            <textarea class="form-control" id="Descricao" name="Descricao" rows="4" placeholder="Descreva detalhadamente o problema" required></textarea>
+        </div>
+
+        <!-- Adicione mais campos conforme necessário -->
+        <!-- Botão para enviar relatório -->
+        <button type="submit" class="btn btn-primary">Enviar Relatório</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

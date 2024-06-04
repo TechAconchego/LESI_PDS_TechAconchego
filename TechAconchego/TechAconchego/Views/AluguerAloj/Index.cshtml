@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TechAconchego.Models.Alojamento>
+
+@{
+    ViewData["Title"] = "Gerir Alojamento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Gerir Alojamento</h2>
+
+    <h3>Alojamentos Disponíveis</h3>
+    <div class="row" id="resultados-pesquisa">
+        @foreach (var alojamento in ViewBag.AlojamentosDisponiveis)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@Url.Content(alojamento.ImagemUrl)" class="card-img-top" alt="@alojamento.Localizacao">
+                    <div class="card-body">
+                        <h5 class="card-title">@alojamento.Localizacao</h5>
+                        <p class="card-text">@alojamento.Descricao</p>
+                        <p class="card-text">Preço: @alojamento.Preco.ToString("C")</p>
+                        <a asp-action="Detalhes" asp-route-id="@alojamento.Id" class="btn btn-primary">Ver Detalhes</a>
+                        @if (!(bool)ViewBag.EstudanteTemAluguer)
+                        {
+                            <form asp-action="Reservar" method="post">
+                                <input type="hidden" name="alojamentoId" value="@alojamento.Id" />
+                                <button type="submit" class="btn btn-success">Reservar</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

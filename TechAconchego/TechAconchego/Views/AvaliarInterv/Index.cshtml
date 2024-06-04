@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Avaliar Intervenção";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Avaliar Intervenção de Manutenção</h2>
+
+    <!-- Formulário para avaliar intervenção -->
+    <form>
+        <!-- Avaliação de satisfação -->
+        <div class="form-group">
+            <label for="satisfacao">Satisfação:</label>
+            <select class="form-control" id="satisfacao">
+                <option value="5">Muito Satisfeito</option>
+                <option value="4">Satisfeito</option>
+                <option value="3">Neutro</option>
+                <option value="2">Insatisfeito</option>
+                <option value="1">Muito Insatisfeito</option>
+            </select>
+        </div>
+
+        <!-- Comentários sobre a intervenção -->
+        <div class="form-group">
+            <label for="comentarios">Comentários:</label>
+            <textarea class="form-control" id="comentarios" rows="4" placeholder="Deixe seus comentários sobre a intervenção"></textarea>
+        </div>
+
+        <!-- Adicione mais campos conforme necessário -->
+        <!-- Botão para enviar avaliação -->
+        <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+    </form>
+</div>

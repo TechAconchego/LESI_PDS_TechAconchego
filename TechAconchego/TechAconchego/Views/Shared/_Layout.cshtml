@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TechAconchego</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TechAconchego.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="~/images/logo_pt-388x122.jpg" alt="Logo">
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TechAconchego</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        @* <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li> *@
+                        @using Microsoft.AspNetCore.Http
+                        @using TechAconchego.Helpers
+                        @inject IHttpContextAccessor HttpContextAccessor
+
+                        @{
+                            var role = Context.Session.GetString("UserRole");
+                            var estudanteTemAluguer = Context.Session.GetBool("EstudanteTemAluguer") ?? false;
+                        }
+                        @if (role == "Estudante")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AluguerAloj" asp-action="Index">Alojamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PesquisaAlojDisp" asp-action="Index">Procurar Alojamento</a>
+                            </li>
+                            @if (estudanteTemAluguer)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="PagarAloj" asp-action="Index">Pagamento</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="RelatarProb" asp-action="Index">Relatar Problema</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="AvaliarInterv" asp-action="Index">Avaliar Intervenção</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GerirConta" asp-action="Index">Conta</a>
+                            </li>
+
+                        }
+                        @if (role == "Senhorio")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GerirAloj" asp-action="Index">Gerir Alojamento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PesquisaAlojDisp" asp-action="Index">Procurar Alojamento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AgendarInterv" asp-action="Index">Agendar Intervenção</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GerirConta" asp-action="Index">Conta</a>
+                            </li>
+
+                        }
+                        @if (role == "Manutencao")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ConfirmarInterv" asp-action="Index">Confirmar Intervenção</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GerirConta" asp-action="Index">Conta</a>
+                            </li>
+
+                        }
+                        @if (role == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GestaoAdmin1" asp-action="Index">Gerir Contas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GestaoAdmin2" asp-action="Index">Gerir Alojamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GestaoAdmin3" asp-action="Index">Gerir Alugueres</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="GestaoAdmin4" asp-action="Index">Gerir Serviços</a>
+                            </li>
+
+                        }
+
+                        <li class="nav-item">
+                            @if (!string.IsNullOrEmpty(Context.Session.GetString("NomeUtilizador")))
+                            {
+                                <a class="nav-link text-dark">@Context.Session.GetString("NomeUtilizador")</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
+                            </li>
+
+                            }
+                            else
+                            {
+                            <a class="nav-link text-dark">(Convidado)</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                            </li>
+                            }
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            @RenderSection("content", required: false)
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - TechAconchego - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

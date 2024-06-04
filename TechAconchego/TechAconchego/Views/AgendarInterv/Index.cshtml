@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Agendar Intervenção";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Agendar Intervenção com Empresa de Serviços Externos</h2>
+
+    <!-- Formulário para agendar intervenção -->
+    <form>
+        <!-- Seleção da empresa de serviços externos -->
+        <div class="form-group">
+            <label for="empresa">Selecione a Empresa de Serviços Externos:</label>
+            <select class="form-control" id="empresa">
+                <option value="empresa1">Empresa 1</option>
+                <option value="empresa2">Empresa 2</option>
+                <option value="empresa3">Empresa 3</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+        </div>
+
+        <!-- Data e hora da intervenção -->
+        <div class="form-group">
+            <label for="dataHora">Data e Hora da Intervenção:</label>
+            <input type="datetime-local" class="form-control" id="dataHora">
+        </div>
+
+        <!-- Descrição da intervenção -->
+        <div class="form-group">
+            <label for="descricao">Descrição da Intervenção:</label>
+            <textarea class="form-control" id="descricao" rows="4" placeholder="Descreva a natureza da intervenção"></textarea>
+        </div>
+
+        <!-- Adicione mais campos conforme necessário -->
+        <!-- Botão para agendar intervenção -->
+        <button type="submit" class="btn btn-primary">Agendar Intervenção</button>
+    </form>
+</div>

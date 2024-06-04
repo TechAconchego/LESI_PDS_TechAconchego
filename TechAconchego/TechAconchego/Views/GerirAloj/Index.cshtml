@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TechAconchego.Models.Alojamento>
+
+@{
+    ViewData["Title"] = "Gerir Alojamento";
+}
+
+<h2 class="mb-4">Gerir Alojamento</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+else
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Adicionar Alojamento</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Localização
+                </th>
+                <th>
+                    Descrição
+                </th>
+                <th>
+                    Preço
+                </th>
+                <th>
+                    Imagem
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Localizacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImagemUrl))
+                        {
+                            <img src="@Url.Content(item.ImagemUrl)" alt="Imagem do Alojamento" style="max-width: 100px;" />
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

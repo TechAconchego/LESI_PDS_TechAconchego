@@ -1,0 +1,207 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TechAconchego
+build_property.RootNamespace = TechAconchego
+build_property.ProjectDir = C:\Users\vilaka\Desktop\IPCA\PDS\TP\TechAconchego\TechAconchego\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\vilaka\Desktop\IPCA\PDS\TP\TechAconchego\TechAconchego
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/AgendarInterv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhckludGVydlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/AlterarPass/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhclBhc3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/AluguerAloj/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1Z3VlckFsb2pcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/AvaliarInterv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhckludGVydlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/ConfirmarInterv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlybWFySW50ZXJ2XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Detalhes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxoZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/EmailEnviado/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxFbnZpYWRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAlojE/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qRVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAlojE/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qRVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAlojE/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qRVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAlojE/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qRVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAlojE/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qRVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirAloj/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJBbG9qXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GerirConta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyaXJDb250YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin1/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4xXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin1/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4xXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin1/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4xXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin1/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4xXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4xXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin2/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin2/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin2/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4yXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin2/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin2/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin3/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin3/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin3/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin3/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin3/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW4zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin4/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW40XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin4/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW40XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin4/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW40XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin4/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW40XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/GestaoAdmin4/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGFvQWRtaW40XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/PagarAloj/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnYXJBbG9qXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/PesquisaAlojDisp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzcXVpc2FBbG9qRGlzcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/RelatarProb/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRhclByb2JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vilaka/Desktop/IPCA/PDS/TP/TechAconchego/TechAconchego/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rerpjk9yzq

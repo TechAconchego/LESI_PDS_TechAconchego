@@ -1,0 +1,70 @@
+﻿@model TechAconchego.Models.Utilizador
+@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<style>
+    /* Adicione este bloco de estilo ou inclua-o no seu arquivo CSS externo */
+    .main-title {
+        color: black;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px; /* Ajuste conforme necessário */
+    }
+
+    .banner-section {
+        position: relative;
+    }
+
+    .banner-content h1, .banner-content p, .banner-content a {
+        color: white;
+    }
+</style>
+
+<div class="container-fluid">
+    <!-- Secção do Banner -->
+    <section class="banner-section text-center">
+        <h1 class="main-title">
+            @if (Context.User.Identity.IsAuthenticated)
+            {
+                <text>Bem-vindo, @Context.User.Identity.Name</text>
+            }
+            else
+            {
+                <text>Bem-vindo ao TechAconchego</text>
+            }
+        </h1>
+        <img src="/images/captura-de-ecra-2023-01-12-as-142010.jpg" alt="Imagem do Banner" class="img-fluid">
+        <div class="banner-content">
+            <p>A sua solução única para uma vida confortável</p>
+            <a href="#" class="btn btn-primary btn-lg">Começar</a>
+        </div>
+    </section>
+
+    <!-- Secção de Funcionalidades -->
+    <section class="features-section text-center mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa fa-home"></i>
+                    <h3>Alojamentos de Qualidade</h3>
+                    <p>Explore uma variedade de alojamentos de alta qualidade adaptados às suas necessidades.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa fa-search"></i>
+                    <h3>Pesquisa Fácil</h3>
+                    <p>Encontre facilmente o lugar perfeito com as nossas opções de pesquisa amigáveis.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa fa-cogs"></i>
+                    <h3>Gestão de Utilizador</h3>
+                    <p>Gerencie a sua conta, pagamentos e preferências de forma fácil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

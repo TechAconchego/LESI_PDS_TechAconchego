@@ -1,0 +1,97 @@
+﻿@model TechAconchego.Models.Utilizador
+
+@{
+    ViewData["Title"] = "Conta";
+}
+
+<h2>Minha Conta</h2>
+
+<div>
+    <label for="nome">Nome:</label>
+    <p>@Model.NomeUtilizador</p>
+
+    <label for="email">Email:</label>
+    <p>@Model.Email</p>
+
+    <label for="role">Tipo de Conta</label>
+    <p>@Model.Role</p>
+
+    <a asp-action="EditarPerfil">Editar Perfil</a>
+</div>
+
+<br />
+<br />
+
+@if (Model.Role != "Senhorio")
+{
+    <div>
+        <h3>Alojamento Reservado</h3>
+
+        @if (Model.Alugueres.Any())
+        {
+            var aluguer = Model.Alugueres.FirstOrDefault(); // Assuming one reservation per student
+            <div>
+                <p><strong>Nome do Alojamento:</strong> @aluguer.Alojamento.Localizacao</p>
+                <p><strong>Descrição:</strong> @aluguer.Alojamento.Descricao</p>
+                <p><strong>Preço:</strong> €@aluguer.Alojamento.Preco.ToString("F2")</p>
+                <p><strong>Prazo:</strong> @aluguer.Prazo.ToShortDateString()</p>
+                <img src="@Url.Content(aluguer.Alojamento.ImagemUrl)" alt="Imagem do Alojamento" class="imagem-pequena">
+
+                <br />
+                <br />
+
+                <a asp-controller="AluguerAloj" asp-action="Detalhes" asp-route-id="@aluguer.Alojamento.Id" class="btn btn-primary">Ver Detalhes</a>
+                <button type="button" class="btn btn-danger" onclick="cancelarAluguer(@aluguer.Id)">Cancelar</button>
+            </div>
+        }
+        else
+        {
+            <p>Você não tem nenhum alojamento reservado.</p>
+        }
+    </div>
+}
+
+<br />
+<br />
+
+<div>
+    <h3>Opções de Conta</h3>
+
+    <button onclick="alterarPass()" class="btn btn-info">Alterar Senha</button>
+    <button onclick="encerrarSessao()" class="btn btn-warning">Encerrar Sessão</button>
+</div>
+
+@section Scripts {
+    <script>
+        function alterarPass() {
+            alert("Foi enviado um email para @Model.Email! Por favor, confirme!");
+        }
+
+        function encerrarSessao() {
+            window.location.href = '/GerirConta/EncerrarSessao';
+        }
+        function cancelarAluguer(aluguerId) {
+            if (confirm("Tem a certeza que deseja cancelar este aluguer?")) {
+                // Fazer uma solicitação para cancelar o aluguer
+                fetch(`/GerirConta/CancelarAluguer?aluguerId=${aluguerId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Atualizar a página após o cancelamento do aluguer
+                            window.location.reload();
+                        } else {
+                            alert("Ocorreu um erro ao cancelar o aluguer.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ocorreu um erro:', error);
+                        alert("Ocorreu um erro ao cancelar o aluguer.");
+                    });
+            }
+        }
+    </script>
+}

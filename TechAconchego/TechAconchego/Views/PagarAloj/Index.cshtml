@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_Layout";
+    var aluguer = Model;
+    var alojamento = aluguer.Alojamento;
+}
+
+<h2>Pagar Alojamento</h2>
+
+@if (aluguer != null && alojamento != null)
+{
+    <div class="detalhes-alojamento">
+        <div class="imagem-e-detalhes">
+            <img src="@alojamento.ImagemUrl" alt="Imagem do Alojamento" class="imagem-pequena">
+            <div class="detalhes">
+                <p><strong>Localização:</strong> @alojamento.Localizacao</p>
+                <p><strong>Descrição:</strong> @alojamento.Descricao</p>
+                <p><strong>Preço:</strong> @alojamento.Preco</p>
+                <!-- Adicione mais detalhes conforme necessário -->
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <form asp-action="Pagar" method="post">
+            <input type="hidden" name="aluguerId" value="@aluguer.Id" />
+
+            <label for="numeroCartao">Número do Cartão:</label>
+            <input type="text" id="numeroCartao" name="numeroCartao" placeholder="1234 5678 9012 3456" required>
+
+            <label for="nomeTitular">Nome do Titular:</label>
+            <input type="text" id="nomeTitular" name="nomeTitular" placeholder="Nome Completo" required>
+
+            <div class="form-row">
+                <div class="col">
+                    <label for="dataExpiracao">Data de Expiração:</label>
+                    <input type="text" id="dataExpiracao" name="dataExpiracao" placeholder="MM/AA" required>
+                </div>
+
+                <div class="col">
+                    <label for="codigoSeguranca">Código de Segurança:</label>
+                    <input type="text" id="codigoSeguranca" name="codigoSeguranca" placeholder="123" required>
+                </div>
+            </div>
+
+            <button type="submit">Pagar</button>
+        </form>
+    </div>
+}
+else
+{
+    <p>Não há alojamento ou aluguer associado a este estudante.</p>
+}

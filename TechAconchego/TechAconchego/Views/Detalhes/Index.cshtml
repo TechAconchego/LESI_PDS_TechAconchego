@@ -1,0 +1,20 @@
+﻿@model TechAconchego.Models.Alojamento
+
+@{
+    ViewData["Title"] = "Detalhes do Alojamento";
+}
+
+<h2>Detalhes do Alojamento</h2>
+
+<div class="detalhes-alojamento">
+    <div class="imagem-e-detalhes">
+        <img src="@Url.Content(Model.ImagemUrl)" alt="Imagem do Alojamento" class="imagem-pequena">
+        <div class="detalhes">
+            <p><strong>Nome do Alojamento:</strong> @Model.Localizacao</p>
+            <p><strong>Localização:</strong> @Model.Localizacao</p>
+            <p><strong>Preço:</strong> €@Model.Preco.ToString("C")</p>
+            <p><strong>Descrição:</strong> @Model.Descricao</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+        </div>
+    </div>
+</div>

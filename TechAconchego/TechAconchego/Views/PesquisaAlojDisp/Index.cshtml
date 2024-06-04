@@ -1,0 +1,84 @@
+﻿@* @{
+    Layout = "_Layout";
+}
+
+@section content {
+    <h2>Pesquisar Alojamentos Disponíveis</h2>
+
+    <form method="get" action="@Url.Action("PesquisarAlojamentos", "Alojamentos")">
+        <div class="form-group">
+            <label for="localizacao">Localização:</label>
+            <input type="text" id="localizacao" name="localizacao" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="comodidades">Comodidades:</label>
+            <input type="text" id="comodidades" name="comodidades" class="form-control" />
+        </div>
+
+        <!-- Adicione mais campos conforme necessário -->
+
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+    </form>
+
+    <!-- Exibir resultados da pesquisa aqui -->
+    <div id="resultados">
+        <!-- Lista de alojamentos disponíveis -->
+        <ul>
+            <li>Alojamento 1</li>
+            <li>Alojamento 2</li>
+            <!-- Adicione mais conforme necessário -->
+        </ul>
+    </div>
+}
+ *@
+
+
+@model IEnumerable<TechAconchego.Models.Alojamento>
+
+<h2>Pesquisa de Alojamentos Disponíveis</h2>
+
+<form asp-action="Index" method="get">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="localizacao">Localização:</label>
+            <input type="text" class="form-control" id="localizacao" name="localizacao" placeholder="Insira a localização">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="precoMax">Preço Máximo:</label>
+            <input type="number" class="form-control" id="precoMax" name="precoMax" placeholder="Insira o preço máximo">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h3>Resultados da Pesquisa:</h3>
+    <div class="row" id="resultados-pesquisa">
+        @foreach (var alojamento in Model)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@Url.Content(alojamento.ImagemUrl)" class="card-img-top" alt="@alojamento.Localizacao">
+                    <div class="card-body">
+                        <h5 class="card-title">@alojamento.Localizacao</h5>
+                        <p class="card-text">@alojamento.Descricao</p>
+                        <p class="card-text">Preço: @alojamento.Preco.ToString("C")</p>
+                        <a asp-action="Detalhes" asp-route-id="@alojamento.Id" class="btn btn-primary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Nenhum alojamento disponível foi encontrado.</p>
+}
+

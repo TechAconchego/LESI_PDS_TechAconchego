@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Confirmação de Agendamento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Confirmação de Agendamento</h2>
+
+    <!-- Detalhes da Intervenção -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Detalhes da Intervenção</h5>
+            <p class="card-text"><strong>Empresa:</strong> Empresa XYZ</p>
+            <p class="card-text"><strong>Data e Hora:</strong> 10 de março de 2024, 14:30</p>
+            <p class="card-text"><strong>Descrição:</strong> Intervenção para reparos elétricos.</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+        </div>
+    </div>
+
+    <!-- Opção de Confirmação ou Rejeição -->
+    <form class="mt-4" id="detalhes-alojamento">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="confirmacao" id="confirmar" value="confirmar" checked>
+            <label class="form-check-label" for="confirmar">
+                Confirmar Agendamento
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="confirmacao" id="rejeitar" value="rejeitar">
+            <label class="form-check-label" for="rejeitar">
+                Rejeitar Agendamento
+            </label>
+        </div>
+
+        <!-- Comentários adicionais, se necessário -->
+        <div class="form-group mt-3">
+            <label for="comentarios">Comentários Adicionais (opcional):</label>
+            <textarea class="form-control" id="comentarios" rows="4" placeholder="Adicione comentários adicionais"></textarea>
+        </div>
+
+        <!-- Botões de Submissão -->
+        <button type="submit" class="btn btn-success">Confirmar</button>
+        <button type="submit" class="btn btn-danger">Rejeitar</button>
+    </form>
+</div>

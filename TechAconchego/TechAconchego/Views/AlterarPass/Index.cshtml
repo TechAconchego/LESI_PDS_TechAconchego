@@ -1,0 +1,33 @@
+﻿@model TechAconchego.Models.AlterarPass
+
+@{
+    ViewData["Title"] = "Alterar Pass";
+}
+
+<h2>Alterar Pass</h2>
+
+<form asp-action="AlterarPass" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="PassAtual"></label>
+        <input asp-for="PassAtual" class="form-control" />
+        <span asp-validation-for="PassAtual" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NovaPass"></label>
+        <input asp-for="NovaPass" class="form-control" />
+        <span asp-validation-for="NovaPass" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmarNovaPass"></label>
+        <input asp-for="ConfirmarNovaPass" class="form-control" />
+        <span asp-validation-for="ConfirmarNovaPass" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Alterar Pass</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Adicione aqui quaisquer scripts necessários para a view
+    </script>
+}
