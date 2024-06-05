@@ -37,6 +37,26 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    @* <a asp-action="Index">Back to List</a> *@
 </div>
+
+<div>
+    <button id="voltarButton" class="btn btn-secondary">Voltar</button>
+
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $("#voltarButton").click(function () {
+                history.go(-1);
+            });
+        });
+    </script>
+}

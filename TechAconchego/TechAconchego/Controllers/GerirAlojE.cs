@@ -58,6 +58,10 @@ namespace TechAconchego.Controllers
         {
             _logger.LogInformation("Create method called for Alojamento");
 
+            ModelState.Remove("Alugueres");
+            ModelState.Remove("Manutencoes");
+            ModelState.Remove("RelatorioProblemas");
+
             if (ModelState.IsValid)
             {
                 try
@@ -66,7 +70,18 @@ namespace TechAconchego.Controllers
                     await _context.SaveChangesAsync();
                     _logger.LogInformation("New accommodation created with ID: {Id}", alojamento.Id);
                     TempData["SuccessMessage"] = "Alojamento criado com sucesso.";
-                    return RedirectToAction(nameof(Index));
+
+                    // Retorna para a página anterior
+                    string returnUrl = Request.Headers["Referer"].ToString();
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        // Se não houver URL de referência, redireciona para uma rota padrão
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -111,6 +126,10 @@ namespace TechAconchego.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove("Alugueres");
+            ModelState.Remove("Manutencoes");
+            ModelState.Remove("RelatorioProblemas");
+
             if (ModelState.IsValid)
             {
                 try
@@ -120,7 +139,18 @@ namespace TechAconchego.Controllers
 
                     TempData["SuccessMessage"] = "Alojamento atualizado com sucesso!";
                     _logger.LogInformation("Alojamento with ID = {Id} updated successfully", id);
-                    return RedirectToAction(nameof(Index));
+
+                    // Retorna para a página anterior
+                    string returnUrl = Request.Headers["Referer"].ToString();
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        // Se não houver URL de referência, redireciona para uma rota padrão
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -145,7 +175,8 @@ namespace TechAconchego.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos.FirstOrDefaultAsync(m => m.Id == id);
+            var alojamento = await _context.Alojamentos
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -163,10 +194,11 @@ namespace TechAconchego.Controllers
             if (alojamento != null)
             {
                 _context.Alojamentos.Remove(alojamento);
-                await _context.SaveChangesAsync();
             }
 
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
