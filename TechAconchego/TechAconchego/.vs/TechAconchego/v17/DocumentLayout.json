@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\views\\geriraloje\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|solutionrelative:views\\geriraloje\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\views\\gerirconta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|solutionrelative:views\\gerirconta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\controllers\\geriraloje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\controllers\\geriraloj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|solutionrelative:controllers\\geriraloj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|c:\\users\\vilaka\\desktop\\ipca\\pds\\tp\\techaconchego\\techaconchego\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{65186D51-B56F-4FF8-A1D3-CCC979264FD7}|TechAconchego.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,33 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\GerirAlojE\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\GerirAlojE\\Index.cshtml",
-              "ToolTip": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\GerirAlojE\\Index.cshtml",
-              "RelativeToolTip": "Views\\GerirAlojE\\Index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-05T14:18:29.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\GerirConta\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\GerirConta\\Index.cshtml",
-              "ToolTip": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\GerirConta\\Index.cshtml",
-              "RelativeToolTip": "Views\\GerirConta\\Index.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACMAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-05T14:18:18.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "GerirAlojE.cs",
               "DocumentMoniker": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Controllers\\GerirAlojE.cs",
               "RelativeDocumentMoniker": "Controllers\\GerirAlojE.cs",
@@ -93,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GerirAloj.cs",
               "DocumentMoniker": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Controllers\\GerirAloj.cs",
               "RelativeDocumentMoniker": "Controllers\\GerirAloj.cs",
@@ -101,18 +67,17 @@
               "RelativeToolTip": "Controllers\\GerirAloj.cs",
               "ViewState": "AQIAAEUAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T13:08:54.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T13:08:54.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEIAAABjAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAACMAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-03T06:43:52.385Z",
               "EditorCaption": ""

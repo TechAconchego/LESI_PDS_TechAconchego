@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechAconchego")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c44743f4180911edbef72c957f304564e5900e58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9674c430edbd9a7e984a520044edfb90883e8f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechAconchego")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechAconchego")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
