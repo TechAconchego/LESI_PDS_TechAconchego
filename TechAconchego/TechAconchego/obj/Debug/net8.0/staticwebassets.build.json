@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7TACeiqgSu/TseXfoCIczxBmhUy92xs5d7+0iROODmU=",
+  "Hash": "JEjqA2ysBZpeulH6LuoutMgdZ1HNScKUbE5pAwj5HeE=",
   "Source": "TechAconchego",
   "BasePath": "_content/TechAconchego",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\image4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\wwwroot\\images\\image5.jpg",
+      "SourceId": "TechAconchego",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\wwwroot\\",
+      "BasePath": "_content/TechAconchego",
+      "RelativePath": "images/image5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\image5.jpg"
     },
     {
       "Identity": "C:\\Users\\vilaka\\Desktop\\IPCA\\PDS\\TP\\TechAconchego\\TechAconchego\\wwwroot\\images\\logo_pt-388x122.jpg",

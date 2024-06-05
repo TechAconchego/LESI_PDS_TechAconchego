@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using TechAconchego.Data;
 using TechAconchego.Models;
 
@@ -13,10 +14,12 @@ namespace TechAconchego.Controllers
     public class GerirAlojE : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<GerirAlojE> _logger;
 
-        public GerirAlojE(ApplicationDbContext context)
+        public GerirAlojE(ApplicationDbContext context, ILogger<GerirAlojE> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: GerirAlojE
@@ -33,8 +36,7 @@ namespace TechAconchego.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var alojamento = await _context.Alojamentos.FirstOrDefaultAsync(m => m.Id == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -50,18 +52,33 @@ namespace TechAconchego.Controllers
         }
 
         // POST: GerirAlojE/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Localizacao,Preco,Estado,Descricao,ImagemUrl")] Alojamento alojamento)
+        public async Task<IActionResult> Create([Bind("Localizacao,Preco,Estado,Descricao,ImagemUrl")] Alojamento alojamento)
         {
+            _logger.LogInformation("Create method called for Alojamento");
+
             if (ModelState.IsValid)
             {
-                _context.Add(alojamento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _context.Add(alojamento);
+                    await _context.SaveChangesAsync();
+                    _logger.LogInformation("New accommodation created with ID: {Id}", alojamento.Id);
+                    TempData["SuccessMessage"] = "Alojamento criado com sucesso.";
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred while creating Alojamento");
+                    TempData["ErrorMessage"] = "Ocorreu um erro ao criar o alojamento. Por favor, tente novamente.";
+                }
             }
+            else
+            {
+                _logger.LogWarning("ModelState is not valid");
+            }
+
             return View(alojamento);
         }
 
@@ -82,14 +99,15 @@ namespace TechAconchego.Controllers
         }
 
         // POST: GerirAlojE/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Localizacao,Preco,Estado,Descricao,ImagemUrl")] Alojamento alojamento)
         {
+            _logger.LogInformation("Edit method called with ID = {Id}", id);
+
             if (id != alojamento.Id)
             {
+                _logger.LogWarning("ID mismatch: route ID = {RouteId}, model ID = {ModelId}", id, alojamento.Id);
                 return NotFound();
             }
 
@@ -99,20 +117,23 @@ namespace TechAconchego.Controllers
                 {
                     _context.Update(alojamento);
                     await _context.SaveChangesAsync();
+
+                    TempData["SuccessMessage"] = "Alojamento atualizado com sucesso!";
+                    _logger.LogInformation("Alojamento with ID = {Id} updated successfully", id);
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException ex)
                 {
-                    if (!AlojamentoExists(alojamento.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    _logger.LogError(ex, "Concurrency error occurred while updating Alojamento with ID = {Id}", alojamento.Id);
+                    TempData["ErrorMessage"] = "A concurrency error occurred. Please try again.";
                 }
-                return RedirectToAction(nameof(Index));
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred while updating Alojamento with ID = {Id}", alojamento.Id);
+                    TempData["ErrorMessage"] = "An error occurred while updating the Alojamento. Please try again.";
+                }
             }
+
             return View(alojamento);
         }
 
@@ -124,8 +145,7 @@ namespace TechAconchego.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var alojamento = await _context.Alojamentos.FirstOrDefaultAsync(m => m.Id == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -143,15 +163,10 @@ namespace TechAconchego.Controllers
             if (alojamento != null)
             {
                 _context.Alojamentos.Remove(alojamento);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool AlojamentoExists(int id)
-        {
-            return _context.Alojamentos.Any(e => e.Id == id);
         }
     }
 }

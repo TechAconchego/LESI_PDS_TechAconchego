@@ -44,7 +44,7 @@ namespace TechAconchego.Controllers
             return View(utilizador);
         }
 
-        // GET: GestaoAdmin1/Create
+        //GET: GestaoAdmin1/Create
         public IActionResult Create()
         {
             // Passar as opções de roles para a View
@@ -59,6 +59,7 @@ namespace TechAconchego.Controllers
             return View();
         }
 
+
         // POST: GestaoAdmin1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -67,6 +68,7 @@ namespace TechAconchego.Controllers
             _logger.LogInformation("Create method called");
 
             ModelState.Remove("Alugueres");  // Ignora a validação para o campo Alugueres
+            ModelState.Remove("RelatorioProblemas");
 
             if (ModelState.IsValid)
             {
@@ -77,7 +79,27 @@ namespace TechAconchego.Controllers
 
                 _logger.LogInformation("New user created with ID: {Id}", utilizador.Id);
 
-                return RedirectToAction(nameof(Index));
+                // Log temporário para verificar o nome do utilizador
+                _logger.LogInformation("Nome do utilizador: {NomeUtilizador}", utilizador.NomeUtilizador);
+
+                //return RedirectToAction(nameof(Index));
+
+
+                // Adicione uma mensagem de sucesso à TempData
+                TempData["SuccessMessage"] = "Utilizador criado com sucesso.";
+
+                // Verifica se a URL de referência está presente nos cabeçalhos da solicitação
+                string returnUrl = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(returnUrl))
+                {
+                    // Redireciona para a URL de referência
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    // Se a URL de referência não estiver presente, redireciona para uma rota padrão
+                    return RedirectToAction(nameof(Index));
+                }
             }
             else
             {
@@ -89,6 +111,9 @@ namespace TechAconchego.Controllers
                         _logger.LogWarning($"Error in property {entry.Key}: {error.ErrorMessage}");
                     }
                 }
+
+                // Se houver erros de validação, retorne a view de criação de usuário para exibir os erros
+                return View(utilizador);
             }
 
             // Repassar as opções de roles para a View em caso de erro de validação
@@ -129,8 +154,9 @@ namespace TechAconchego.Controllers
                 return NotFound();
             }
 
-            // Remove "Alugueres" from ModelState validation if it causes issues
+            // Remove from ModelState validation if it causes issues
             ModelState.Remove("Alugueres");
+            ModelState.Remove("RelatorioProblemas");
 
             if (ModelState.IsValid)
             {
@@ -151,8 +177,12 @@ namespace TechAconchego.Controllers
                     _context.Update(utilizador);
                     await _context.SaveChangesAsync();
 
-                    TempData["SuccessMessage"] = "User updated successfully!";
-                    return RedirectToAction(nameof(Index));
+
+                    // Adicionar um script JavaScript à ViewBag para redirecionar duas páginas atrás
+                    ViewBag.RedirectBack = true;
+
+                    TempData["SuccessMessage"] = "Utilizador atualizado com sucesso!";
+                    return RedirectToAction("Index", "Home");
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -170,6 +200,8 @@ namespace TechAconchego.Controllers
                 {
                     _logger.LogError(ex, "An error occurred while updating user with ID: {Id}", utilizador.Id);
                     TempData["ErrorMessage"] = "An error occurred while updating the user. Please try again.";
+                    // Se ocorrer um erro, retorne um JSON indicando o erro
+                    return Json(new { success = false, error = ex.Message });
                 }
             }
             else

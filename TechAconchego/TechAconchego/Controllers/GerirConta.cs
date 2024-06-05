@@ -80,6 +80,21 @@ namespace TechAconchego.Controllers
 
             return RedirectToAction("Index", "GerirConta");
         }
+
+        public async Task<IActionResult> MinhaConta()
+        {
+            var utilizador = await _context.Utilizadores
+                .Include(u => u.Alugueres)
+                    .ThenInclude(a => a.Alojamento)
+                .FirstOrDefaultAsync(u => u.NomeUtilizador == User.Identity.Name);
+
+            if (utilizador == null)
+            {
+                return NotFound();
+            }
+
+            return View(utilizador);
+        }
     }
 }
 

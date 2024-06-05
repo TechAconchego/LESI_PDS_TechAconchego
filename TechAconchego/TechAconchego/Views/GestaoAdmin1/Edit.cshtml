@@ -51,11 +51,23 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <button id="voltarButton" class="btn btn-secondary">Voltar</button>
+
+
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        $(document).ready(function () {
+            $("#voltarButton").click(function () {
+                history.go(-1);
+            });
+        });
+    </script>
 }
+
+
