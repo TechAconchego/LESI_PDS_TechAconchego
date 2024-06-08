@@ -1,3 +1,4 @@
+
 # Student TechAconchego Rental App
 
 ## Table of Contents
@@ -37,39 +38,109 @@ This repository contains the source code for a local web application designed to
 
 To run this web application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/student-habitat-rental.git`
-2. Navigate to the project directory: `cd student-habitat-rental`
-3. Install Python and Django: [Python Installation](https://www.python.org/downloads/) | [Django Installation](https://docs.djangoproject.com/en/3.2/intro/install/)
-4. Install PostgreSQL: [PostgreSQL Installation](https://www.postgresql.org/download/)
-5. Create and activate a virtual environment: `python -m venv venv` and `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
-6. Install Python dependencies: `pip install -r requirements.txt`
-7. Start the development server: `python manage.py runserver`
-8. Open your browser and visit: `http://localhost:8000`
+1. **Clone the repository:**
+   ```shell
+   git clone https://github.com/your-username/student-habitat-rental.git
+   ```
+
+2. **Navigate to the project directory:**
+   ```shell
+   cd student-habitat-rental
+   ```
+
+3. **Download and install the .NET SDK:**
+   - Visit the [official .NET website](https://dotnet.microsoft.com/download) to download and install the .NET SDK.
+
+4. **Set up the project:**
+   ```shell
+   dotnet new webapp -o TechAconchego
+   cd TechAconchego
+   ```
+
+5. **Install Entity Framework Core (for database interactions):**
+   ```shell
+   dotnet add package Microsoft.EntityFrameworkCore
+   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+   dotnet add package Microsoft.EntityFrameworkCore.Tools
+   ```
+
+6. **Configure the database:**
+   - Update the `appsettings.json` file with your database connection string.
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Host=localhost;Database=student_habitat;Username=your_username;Password=your_password"
+     },
+     "Logging": {
+       "LogLevel": {
+         "Default": "Information",
+         "Microsoft": "Warning",
+         "Microsoft.Hosting.Lifetime": "Information"
+       }
+     },
+     "AllowedHosts": "*"
+   }
+   ```
+
+7. **Create and apply migrations:**
+   ```shell
+   dotnet ef migrations add InitialCreate
+   dotnet ef database update
+   ```
+
+8. **Run the application:**
+   ```shell
+   dotnet run
+   ```
+
+9. **Open your browser and visit:**
+   - Navigate to `http://localhost:5000` to view your application.
 
 ## Dependencies
 
-- Python
-- Django
-- Railway
-- PostgreSQL
+- C#
+- .NET SDK
+- Entity Framework Core
+- SQL Server or SQLite
 
-Make sure to have these dependencies installed before running the application.
+Ensure these dependencies are installed before running the application.
 
 ## Usage
 
-1. Students can create accounts, search for available habitats, and book rentals.
-2. Landlords can list their available rooms or habitats, manage bookings, and view tenant information.
-3. The application provides an intuitive interface for a seamless user experience.
+1. **Students:**
+   - Create accounts, search for available habitats, and book rentals.
+
+2. **Landlords:**
+   - List available rooms or habitats, manage bookings, and view tenant information.
+
+3. **Interface:**
+   - The application provides an intuitive interface for a seamless user experience.
 
 ## Contributing
 
 If you'd like to contribute to the project, please follow these guidelines:
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature-new-feature`
-3. Commit your changes: `git commit -m 'Add new feature'`
-4. Push to the branch: `git push origin feature-new-feature`
-5. Submit a pull request
+1. **Fork the repository:**
+   ```shell
+   git clone https://github.com/your-username/student-habitat-rental.git
+   ```
+
+2. **Create a new branch:**
+   ```shell
+   git checkout -b feature-new-feature
+   ```
+
+3. **Commit your changes:**
+   ```shell
+   git commit -m 'Add new feature'
+   ```
+
+4. **Push to the branch:**
+   ```shell
+   git push origin feature-new-feature
+   ```
+
+5. **Submit a pull request.**
 
 ## License
 
